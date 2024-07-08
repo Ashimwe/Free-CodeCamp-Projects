@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Survey Form</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="form.css">
+    </head>
+    <body>
+      <div class="container">
+      <h1 id="title">Christian Form</h1>
+      <p id="decription">If you're a christian from XYZ church, you're required to fill out this form<br>
+      If you're not a christian from XYZ church,Please exit this page immediately</p>
+      <form id="survey-form">
+        <fieldset>
+          <label for="name" id="name-label">
+            Enter your full name: 
+            <input type="text" id="name" placeholder="Enter your full names..." required>
+            </label>
+          <label for="email" id="email-label">
+            Enter your email: 
+            <input type="email" id="email" placeholder="Enter your e-mail in the form example@example.example" required>
+            </label>
+          <label for="number" id="number-label" >
+            Enter your age: 
+            <input type="number" id="number"max="120" min="12" placeholder="Enter your age" required>
+            </label>
+        </fieldset>
+        <fieldset class="inline">
+          <label for="dropdown">
+            Select your department:
+          <select id="dropdown" required>
+            <option>Select your department</option>
+            <option>Youth</option>
+            <option>Men</option>
+            <option>Women</option>
+            </select>
+            </label>
+            <label>Have you been baptized</label>
+            <label for="yes">
+              <input id="yes" type="radio" name="baptism" checked> Yes
+              </label>
+              <label for="no">
+              <input id="no" type="radio" name="baptism"> No
+              </label>
+              <label>Select your church activities</label>
+              <label for="option1">
+              <input type="checkbox" id="option1" name="churchactivities" value="singer">
+             Singer
+              </label>
+              <label for="option2">
+              <input type="checkbox" id="option2" name="churchactivities" value="preacher">
+              Preacher</label>
+              <label for="option3">
+              <input type="checkbox" id="option3" name="churchactivities" value="choir">
+              Choir</label>
+              <label for="option4">
+              <input type="checkbox" id="option4" name="churchactivities" value="protocol">
+              Protocol</label>
+              <label for="option5">
+              <input type="checkbox" id="option5" name="churchactivities" value="tools-specialist">
+              Tools Specialist</label>
+              <label>
+              <input type="checkbox" id="option6" name="churchactivities" value="no-activity"> No Activity</label>
+              <label for='comments'>Do you have any comments or suggestions
+              <textarea id="comments" rows="3" cols="30" name="comments" placeholder="Enter your comment.." ></textarea>
+              </label>  
+          </fieldset>
+          <input type="submit" value="Submit">
+      </form>
+      </div>
+      </body>
+  </html>
