@@ -10,6 +10,7 @@
 html{
     margin: 0;
     overflow-x: hidden;
+    font-size: 62.5%;
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
@@ -25,7 +26,7 @@ body{
     flex-wrap: nowrap;
     background-color: #03051177;
     width: 100%;
-    z-index: 100;
+    z-index: 999;
 }
 #nav-bar{
     display: flex;
@@ -34,8 +35,8 @@ body{
     width: 98%;
 }
 .img-logo-container{
-    width: 2rem;
-    margin: 0.5rem;
+    width: 3.2rem;
+    margin: 0.8rem;
 }
 img{
     display: block;
@@ -46,9 +47,9 @@ img{
 .nav-link{
     text-decoration: none;
     color: var(--color2);   
-    padding: 0.9rem 0.7rem;
+    padding: 1.44rem 1.12rem;
     transition: .5s;
-    font-size: 15.3px;
+    font-size: 1.53rem;
 }
 .nav-link:hover{
     background-color:var(--color2);
@@ -57,72 +58,64 @@ img{
     text-decoration: underline;
 }
 #home{
-    padding: 20px;
-    z-index: 999;
+    padding: 2rem;
+    position: relative;
 }
 .catcher{
-    font-size: 3.5rem;
-    margin-top: 4rem;
+    font-size: 5rem;
+    margin-top: 6.4rem;
     margin-left: auto;
     margin-right: auto;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    animation-name: catcher;
-    animation-timing-function: ease-in-out;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    position: relative;
     width: max-content;
+    position: relative;
 }
 .christmas_hat{
     display: inline-block;
-    width: 60px;
-    height: 50px;
+    width: 6rem;
+    height: 5rem;
     position: absolute;
-    top: -7px;
-    right: 34%;
+    top: -0.7rem;
+    right: 33%;
     transform: rotate(-10deg);
 }
 .catcher-subtitle{
     position: relative;
     text-align: center;
-    font-size: 2rem;    
-    margin-top: 0.3rem;
+    font-size: 3.2rem;    
+    margin-top: 0.48rem;
     opacity: 0.8;
     -webkit-text-stroke: 0.5px orangered;     
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-     animation-name: catchersub;
-     animation-duration: 2s;
-     animation-iteration-count: infinite;
-     animation-timing-function: ease-in-out;
 }
 .discount{
-    width: 80px;
-    height: 80px;
+    width: 8rem;
+    height: 8rem;
     display: inline-block;
     position: absolute;
-    top: -30px;
-    right: 110px;
+    top: -3rem;
+    right: 11rem;
     z-index: -999;
     opacity: 1;
 }
 .shoes{
 display: flex;
-padding: 0 10px;
-margin-top: 20px;
-flex-wrap: nowrap;
+padding: 0 1rem;
+margin-top: 2rem;
 }
 .shoe{
     flex: 20%;
-    margin-left: 10px;
-    height: 450px;
+    margin-left: 1rem;
+    height: 45rem;
     border-top-left-radius: 30%;
     border-top-right-radius: 30%;
-    position: relative; 
+    position: relative;
+    box-shadow: 0 0 3px 3px rgba(0,0,0,0.2),0 0 3px 3px rgba(0,0,0,0.2);
 }
 .shoe img{
-    box-shadow: 0 0 3px 3px rgba(0,0,0,0.2),0 0 3px 3px rgba(0,0,0,0.2);
+    width: 100%;
     height: 100%;
     border-top-left-radius: 30%;
     border-top-right-radius: 30%;
@@ -155,56 +148,60 @@ flex-wrap: nowrap;
     bottom: 0;
     opacity: 1;
     height: 100%;
+    -webkit-backdrop-filter: blur(3px) grayscale(50%);
+    backdrop-filter: blur(3px) grayscale(50%);
 }
 #why_us{
     background: linear-gradient(45deg,var(--color2),#d6d6d6);
     color: var(--color1);
-    border-radius: 20px 20px 0 0;
+    border-radius: 2rem 2rem 0 0;
+    padding-right: 20px;
+    width: 100%;
 }
 .why_us_image{
-    width: 300px;
-    height: 400px;
-    border-radius: 10px;
+    width: 30rem;
+    height: 40rem;
+    border-radius: 1rem;
     box-shadow: 0 0 3px 5px rgba(0,0,0,0.2);
 }
 .icon{
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
+    width: 5rem;
+    height: 5rem;
+    margin-right: 1.5rem;
 }
-.why_us_left_header{
+.text_header{
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-.why_us_left{
+.text{
     width: 1fr;
-    margin-left: 50px;
+    margin-left: 5rem;
 }
 .why_us{
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 15px;
-    padding: 20px;
-    padding-top: 30px;
+    gap: 1.5rem;
+    padding: 2rem;
+    padding-top: 3rem;
 }
-.why_us_left h2{
-    font-size: 30px;
+.text h2{
+    font-size: 3rem;
     text-align: center;
 }
-.why_us_left p{
-    font-size: 15px;
+.text p{
+    font-size: 1.5rem;
     line-height: 180%;
 }
 .button{
     display: block;
     background-color: var(--color1);
-    padding: 14px 16px;
-    border-radius: 5px;
-    margin-top: 10px;
+    padding: 1.4rem 1.6rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
     transition: all 0.5s;
     border: none;
-    width: 10rem;
+    width: 16rem;
 }
 .button a{
     text-decoration: none;
@@ -215,15 +212,15 @@ flex-wrap: nowrap;
 }
 .button a::after{
     content: "\00bb";
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     position: absolute;
     top: -50%;
-    margin-left: 5px;
+    margin-left: 0.5rem;
     right: -100%;
     opacity: 0;
 }
 .button:hover a{
-    padding-right: 20px;
+    padding-right: 2rem;
 }
 .button:hover a::after{
     right: 0%;
@@ -233,11 +230,11 @@ flex-wrap: nowrap;
     grid-template-columns: 1fr auto;
 }
 .two .why_us_image{
-    height: 300px;
+    height: 30rem;
 }
 #our_products{
     background: linear-gradient(45deg,var(--color2),#d6d6d6);
-    padding: 5px;
+    padding: 0.5rem;
     margin: 0;
 }
 #our_products .shoe{
@@ -253,14 +250,14 @@ flex-wrap: nowrap;
 }
 .shoe button{
     background-color: var(--color2);
-    padding: 10px;
+    padding: 1rem;
 }
 .shoe button a{
     color: var(--color1);
 }
 .our_products_text{
     color: white;
-    padding: 10px;
+    padding: 1rem;
 }
 #our_products .shoe img{
     border-radius: 0px;      
@@ -273,9 +270,9 @@ flex-wrap: nowrap;
 .off{
     position: absolute;
     left: 0;
-    top: -27px; 
-    width: 80px;
-    height: 100px;
+    top: -2.7rem; 
+    width: 8rem;
+    height: 10rem;
     object-fit: cover;
     opacity: 0.8;
 }
@@ -283,14 +280,14 @@ flex-wrap: nowrap;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: start;
-    gap: 10px;
+    gap: 1rem;
 }
 p.name{
-    font-size: 18px;
-    margin-top: 10px;
+    font-size: 1.8rem;
+    margin-top: 1rem;
 }
 p.price{
-    font-size: 40px;
+    font-size: 4rem;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-right: 0;
 }
@@ -298,13 +295,13 @@ p.old{
     text-align: center;
     opacity: 0.6;
     text-decoration: line-through;
-    font-size: 20px;
+    font-size: 2rem;
 }
-#footer{
+#contact_us{
     display: grid;
     grid-template-areas: 'left middle middle middle right';
     margin: 0;
-    padding: 10px;
+    padding: 1rem;
 }
 .left{
     grid-area: left;
@@ -312,22 +309,21 @@ p.old{
 }
 .left p{
     opacity: 0.8;
-    margin-right: 5px;
+    margin-right: 0.5rem;
 }
 .social_icons a{
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
 }
 .social_icons{
-    width: 60%;
     display: grid;
-    grid-template-columns: 20px 20px 20px 20px 20px;   
-    gap: 10px;
+    grid-template-columns: 2rem 2rem 2rem 2rem 2rem;   
+    gap: 1rem;
 }
 .social_icons img{
-    width: 20px;
-    height: 20px;
+    width: 3rem;
+    height: 2rem;
     display: inline-block;
 }
 .social_icons a:first-of-type img{
@@ -348,7 +344,7 @@ p.old{
 .contact_us{
    display: flex;
    flex-wrap: nowrap;
-    margin-top: 20px;
+    margin-top: 2rem;
     align-items: center;
 }
 form{
@@ -363,17 +359,17 @@ input{
     margin-right: auto;
     margin-left: auto;
     width: 100%;
-    padding: 10px;
+    padding: 1rem;
 }
 input[type="submit"]{
     background-color: var(--color2);
     color: var(--color1);
     margin-bottom: 0;
-    padding: 8px 5px;
+    padding: 0.8rem 0.5rem;
 }
 .right{
     grid-area: right;
-    padding: 0 30px;
+    padding: 0 3rem;
     position: relative;
 }
 .links{
@@ -387,10 +383,10 @@ input[type="submit"]{
     display: inline-block;
     color: white;
     text-decoration: none;
-    padding: 5px;
+    padding: 0.5rem;
     margin-right: 0;
     max-height: 100%;
-    font-size: 14px;
+    font-size: 1.4rem;
     opacity: 0.8;
     
 }
@@ -398,8 +394,25 @@ input[type="submit"]{
     position: absolute;
     right: 0;
     bottom: 0;
-    font-size: 14px;
+    font-size: 1.12rem;
     width: max-content;
     opacity: 0.6;
-    letter-spacing: 1px;
+    letter-spacing: 0.1rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+@media screen and (max-width: 600px){
+    html{
+        font-size: 50%;
+    }
+    .discount{
+        display: none;
+    }
+    .shoes{
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    .shoe{
+        flex: 30%;
+        margin-top: 20px;
+    }
 }
