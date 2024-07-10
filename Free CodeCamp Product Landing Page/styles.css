@@ -194,21 +194,21 @@ margin-top: 2rem;
     line-height: 180%;
 }
 .button{
-    display: block;
+    display: inline-block;
     background-color: var(--color1);
     padding: 1.4rem 1.6rem;
     border-radius: 0.5rem;
     margin-top: 1rem;
     transition: all 0.5s;
     border: none;
-    width: 16rem;
+   width: 19rem;
 }
 .button a{
     text-decoration: none;
     color: var(--color2);
     position: relative;
-    display: block;
-    transition: 0.5s;
+    display: inline-block;
+    transition: .5s;
 }
 .button a::after{
     content: "\00bb";
@@ -218,6 +218,7 @@ margin-top: 2rem;
     margin-left: 0.5rem;
     right: -100%;
     opacity: 0;
+    transition: .5s;
 }
 .button:hover a{
     padding-right: 2rem;
@@ -226,6 +227,20 @@ margin-top: 2rem;
     right: 0%;
     opacity: 1;
 }
+/*.button span{
+    position: relative;
+    cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+.button span::after{
+    content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}*/
 .two{
     grid-template-columns: 1fr auto;
 }
@@ -245,12 +260,12 @@ margin-top: 2rem;
     display: grid;
     grid-template-rows: 1fr max-content;
     justify-content: flex-end;
-    background-color: var(--color1);
     border-radius: 0px;
 }
-.shoe button{
+.shoe .button{
     background-color: var(--color2);
     padding: 1rem;
+    transition: all .5s ease;
 }
 .shoe button a{
     color: var(--color1);
@@ -258,11 +273,17 @@ margin-top: 2rem;
 .our_products_text{
     color: white;
     padding: 1rem;
+    background-color: var(--color1);
 }
 #our_products .shoe img{
     border-radius: 0px;      
     width: 100%;
     box-shadow: none;
+    transition: all .5s ease;
+}
+#our_products .shoe img:hover{
+    transform: scale(0.99);
+    filter: grayscale(0%) blur(3px);
 }
 .images{
     position: relative;
@@ -275,6 +296,7 @@ margin-top: 2rem;
     height: 10rem;
     object-fit: cover;
     opacity: 0.8;
+    z-index: 100;
 }
 .product_info{
     display: grid;
@@ -298,16 +320,19 @@ p.old{
     font-size: 2rem;
 }
 #contact_us{
-    display: grid;
-    grid-template-areas: 'left middle middle middle right';
     margin: 0;
-    padding: 1rem;
+    display: grid;
+    grid-template-areas:'logo form form form links' 'icons form form form copyright';
+    gap: 10px;
+    position: relative;
+    justify-content: stretch;
+    padding: 0.5rem;
 }
-.left{
-    grid-area: left;
-    max-height: 100%;
+#contact_us .img-logo-container{
+    grid-area: logo;
+    margin: 0;
 }
-.left p{
+.contact_us p{
     opacity: 0.8;
     margin-right: 0.5rem;
 }
@@ -344,15 +369,15 @@ p.old{
 .contact_us{
    display: flex;
    flex-wrap: nowrap;
-    margin-top: 2rem;
     align-items: center;
+    grid-area: icons;
 }
 form{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    grid-area: middle;
     padding-bottom: 0;
+    grid-area: form;
 }
 input{
     display: block;
@@ -366,20 +391,18 @@ input[type="submit"]{
     color: var(--color1);
     margin-bottom: 0;
     padding: 0.8rem 0.5rem;
-}
-.right{
-    grid-area: right;
-    padding: 0 3rem;
-    position: relative;
+    margin-right: auto;
+    margin-left: auto;
 }
 .links{
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
+    grid-area: links;
 }
-.right a{
+.links a{
     display: inline-block;
     color: white;
     text-decoration: none;
@@ -390,19 +413,20 @@ input[type="submit"]{
     opacity: 0.8;
     
 }
-.right p{
+.copyright{
     position: absolute;
-    right: 0;
     bottom: 0;
+    right: 0;
     font-size: 1.12rem;
     width: max-content;
     opacity: 0.6;
     letter-spacing: 0.1rem;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    grid-area: copyright;
 }
 @media screen and (max-width: 600px){
     html{
-        font-size: 50%;
+        font-size: 50%; 
     }
     .discount{
         display: none;
@@ -412,7 +436,17 @@ input[type="submit"]{
         padding: 0;
     }
     .shoe{
-        flex: 30%;
+        flex: 48%;
+        height: 500px;
         margin-top: 20px;
+    }
+    .why_us{
+        grid-template-columns: auto;
+    }
+    #contact_us{
+    grid-template-areas:'logo links' 'form form' 'icons copyright';
+    }
+    .button a::after{
+        top: -30%;
     }
 }
