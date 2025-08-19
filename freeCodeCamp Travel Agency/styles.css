@@ -1,0 +1,20 @@
+*, ::after, ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primaryColor: #F2E8C7;
+    --secondaryColor: #386641;
+    --tertiaryColor: #A7C957;
+    --secondaryColor2: #6A994E;
+    --tertiaryColor2: #000000;
+    --titleFont: "Inter", sans-serif;
+    --bodyFont: "Space Mono", monospace;
+}
+
+body{
+    background-color: var(--primaryColor);
+    padding: 0px 50px 0px 50px;
+}
