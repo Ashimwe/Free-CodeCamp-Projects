@@ -45,16 +45,24 @@ nav{
 #middleNav{
     display: flex;
     background-color: var(--primaryColor);
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+    border-radius: 2000px;
 }
 
 #middleNav a{
     display: inline-block;
-    padding: 5px 20px 5px 5px;
+    padding: 7px 20px;
     text-decoration: none;
     color: var(--secondaryColor);
     font-family: var(--titleFont);
-    border: solid;
+    font-weight: 550;
+    font-size: 80%;
+    /* border: solid; */
 }
+
+/* #middleNav a:first-child{
+    padding-left: 20px;
+} */
 
 #searchBox{
     position: relative;
@@ -70,13 +78,12 @@ nav{
     transition: outline .5s ease-out;
 }
 
-#searchBox::before{
-    content: url('\Travel Agency\Images\Elephants.jpg') / "search";
+#search{
+    /* content: url('\Travel Agency\Images\Elephants.jpg') / "search"; */
     width: 15px;
     position: absolute;
     top: 5px;
     left: 10px;
-    border: solid;
     z-index: 1;
 }
 
