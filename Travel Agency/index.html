@@ -20,7 +20,7 @@ rel="stylesheet">
                 <h2>Savor Rwanda</h2>
             </div>
             
-            <div class = "middleNav">
+            <div id = "middleNav">
 
                 <div class="holder">
                     <a href="#" class="hover"><p>Itineraries</p></a>
@@ -38,23 +38,23 @@ rel="stylesheet">
                 </div>
             </div>
 
-            <div id = "searchBox">
-                <input type = "search" name = "search" placeholder = "Search...">
+            <label for ="shakisha" id = "searchBox">
+                <input type = "search" name = "search" placeholder = "Search..." id = "Shakisha">
                 <img src = "/Travel Agency\Icons\Search.png" alt = "search" id ="search">
 
                 <div id="recents">
                     <p>Recents</p>
                     <div class="recent">
                         <img src="\Travel Agency\Images\Gorilla.jpeg" alt="Gorilla">
-                        <p>Volcanoes National Park</p>
+                        <a>Volcanoes National Park</a>
                     </div>
 
                     <div class="recent">
-                        <img src="\Travel Agency\Images\Zibra.jpg" alt="Gorilla">
-                        <p>Akagera National Park</p>
+                        <img src="\Travel Agency\Images\Gorilla.jpeg" alt="Gorilla">
+                        <a>Akagera National Park</a>
                     </div>
                 </div>
-            </div>
+            </label>
         </nav>
     </header>
 
@@ -63,6 +63,11 @@ rel="stylesheet">
             <div id="heroText">
                 <h1><strong><span>Roam</span> Rwanda</strong><br>Experience the<br>unforgettable</h1>
                 <p></p>
+
+                <a href="#packages" class="groupTravels">
+                    <img src="\Travel Agency\Icons\Tourism Car.png" id="tourismCar">
+                    <p>Group Travels</p>
+                </a>
             </div>       
         </section>
     </main>
