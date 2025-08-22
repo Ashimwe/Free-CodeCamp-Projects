@@ -30,6 +30,7 @@ nav{
 #header{
     display: flex;
     align-items: center;
+    gap: 5px;
 }
 
 #header h2{
@@ -83,7 +84,6 @@ nav{
     display: inline-block;
     z-index: 0;
     /* transform: scaleX(0); */
-    opacity: 0.8;
 }
 
 .hover p{
@@ -111,27 +111,24 @@ nav{
     padding: 5px 0px 5px 30px;
     border-radius: 20px;
     border: none;
-    outline-color: var(--secondaryColor2);
     width: 100%;
     color: var(--secondaryColor);
+    position: relative;
+    z-index: 1;
+    outline: none;
 }
 
 #searchBox input:focus{
-    outline-style: groove;
+    border: .3px groove var(--secondaryColor2);
 }
 
 #search{
-    /* content: url('\Travel Agency\Images\Elephants.jpg') / "search"; */
     width: 15px;
     position: absolute;
-    top: 5px;
     left: 10px;
-    z-index: 1;
-}
-
-#searchBox a, #searchBox p{
-    color: var(--secondaryColor);
-    font-size: 13px;
+    top: 6px;
+    /* border: solid; */
+    z-index: 2;
 }
 
 #recents{
@@ -140,15 +137,12 @@ nav{
     flex-direction: column;
     background-color: var(--primaryColor);
     box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
-    padding: 10px;
     padding-top: 30px;
     z-index: -1;
-    gap: 10px;
     top: -25px;
-    border-radius: 20px 20px 10px 10px;
-    min-width: 100%;
+    border-radius: 12px 12px 10px 10px;
     visibility: hidden;
-    border: 0.3px inset var(--tertiaryColor);
+    border: 0.3px groove var(--tertiaryColor);
 }
 
 #recents.main{
@@ -156,7 +150,8 @@ nav{
     left: 0;
     top:-200px;
     visibility: visible;
-    transition: top .2s ease-in-out;
+    /* transition: top .1s ease-in-out; */
+    z-index: 0;
 }
 
 #recents img{
@@ -175,8 +170,20 @@ nav{
     font-size: 12px;
 }
 
-#searchBox:focus-within .recent:hover{
-    background-color: black;
+#recents > *{
+    padding: 5px 10px;
+}
+
+#recents > *:last-child{
+    border-radius: 0px 0px 5px 5px;
+}
+
+.recent:hover{
+    background-color: var(--secondaryColor2);
+}
+
+.recent:hover a{
+    color: var(--primaryColor);
 }
 
 #searchBox:focus-within #recents.main{
