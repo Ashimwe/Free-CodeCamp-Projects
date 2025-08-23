@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 :root{
@@ -11,16 +12,28 @@
     --tertiaryColor: #A7C957;
     --secondaryColor2: #6A994E;
     --tertiaryColor2: #000000;
-    --titleFont: "Inter", sans-serif;
+    --titleFont: "Archivo", sans-serif;
     --bodyFont: "Space Mono", monospace;
+    overflow-x: hidden;
 }
+
+img{
+    object-fit: cover;
+}
+
+/* .one{
+    grid-area: one;
+}
+
+.two{
+    grid-area: two;
+} */
 
 body{
     background-color: var(--primaryColor);
     padding: 0px 50px;
     font-family: var(--bodyFont);
     position: relative;
-    height: 1000px;
 }
 
 nav{
@@ -57,7 +70,7 @@ nav{
     border-radius: 2000px;
 }
 
-#middleNav .main{
+.main{
     display: inline-block;
     padding: 7px 20px;
     text-decoration: none;
@@ -73,7 +86,7 @@ nav{
     z-index: 3;
 }
 
-#middleNav .main::after{
+.main::after{
     content: '';
     display: block;
     position: absolute;
@@ -87,11 +100,11 @@ nav{
     z-index: -1;
 }
 
-#middleNav .main:hover::after{
+.main:hover::after{
     left: 0;
 }
 
-#middleNav .main:hover{
+.main:hover{
     color: var(--primaryColor);
 }
 
@@ -141,7 +154,7 @@ nav{
     border: 0.3px groove var(--tertiaryColor);
 }
 
-#recents.main{
+#recents.dropdown{
     position: absolute;
     left: 0;
     top: calc(-90%);
@@ -190,28 +203,78 @@ nav{
     color: var(--primaryColor);
 }
 
-#searchBox:focus-within #recents.main{
+#searchBox:focus-within #recents.dropdown{
     top: 0;
 }
 
-/* #searchBox:focus-within{
-    overflow: visible;
-} */
-
 #hero{
-    border: solid;
     padding-top: 100px;
+    display: flex;
+}
+
+#heroText{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#heroText > p{
+    white-space: initial;
+    opacity: 0.7;
+    font-weight: bold;
 }
 
 h1{
     text-transform: uppercase;
     font-family: var(--titleFont);
-    font-weight: 2000;
-    font-size: 200%;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: 50%;
+    color: var(--secondaryColor);
+    display: inline-grid;
+    row-gap: 5px;
 }
 
-span{
+.stroked{
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--secondaryColor2);
+    position: relative;
+}
+
+.dashed{
+    background-color: var(--secondaryColor2);
     color: var(--primaryColor);
+    display: inline-block;
+    padding: 2px 5px;
+}
+
+.style{
+    position: absolute;
+}
+
+.stroked .style.one{
+    aspect-ratio: 2/1;
+    width: 100px;
+    left: -30px;
+    top: -7px;
+    object-fit: contain;
+}
+
+.stroked .style.two{
+    aspect-ratio: 1/0.0625;
+    width: 50%;
+    top: 90%;
+    right: 0;
+}
+
+.buttons{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
 }
 
 .groupTravels{
@@ -224,7 +287,8 @@ span{
     border-radius: 300px;
     position: relative;
     gap: 10px;
-    margin: 10px;
+    font-family: var(--titleFont);
+    margin:  0;
 }
 
 #tourismCar{
@@ -234,7 +298,7 @@ span{
     top: -2px;
     left: 0;
     /* border: solid; */
-    transition: left .8s ease-out;
+    transition: left .5s ease-out;
 }
 
 .groupTravels p{
@@ -249,5 +313,15 @@ span{
 }
 
 .groupTravels:hover #tourismCar{
-    left: 125px;
+    left: 120px;
 }
+
+.privateTours{
+    font-size: initial;
+    padding: 10px 20px;
+    font-weight: bold;
+    /* font-family: var(--bodyFont); */
+    border: 1px solid var(--secondaryColor);
+    margin: 0;
+}
+
