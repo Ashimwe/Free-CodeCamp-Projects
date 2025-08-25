@@ -46,6 +46,7 @@ nav{
     left: 5rem;
     right: 5rem;
     flex-wrap: wrap;
+    gap: 2rem;
 }
 
 #header{
@@ -212,20 +213,22 @@ nav{
 }
 
 #hero{
-    padding-top: 15rem;
-    display: grid;
-    grid-template-columns: 35% 1fr;
+    padding-top: 13rem;
+    display: flex;
     gap: 10%;
-    min-height: 80vh;
-    border: solid;
+    /* flex-wrap: wrap; */
+    min-height: 90vh;
+    /* border: solid; */
 }
 
 #heroText{
-    /* width: 50%; */
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    border: solid;
+    flex-basis: 100%;
+    /* align-self: start; */
+    min-height: 100%;
+    /* border: solid; */
 }
 
 #heroText > p{
@@ -233,7 +236,6 @@ nav{
     opacity: 0.7;
     font-weight: bold;
     font-size: 1.5rem;
-    width: auto;
 }
 
 h1{
@@ -339,33 +341,46 @@ h1{
 }
 
 #umubonjyo{
-    border: solid black;
     display: flex;
     justify-content: end;
-    padding: 5rem;
+    max-height: 100%;
+    /* border: solid; */
+    width: 100%;
+    z-index: -1;
+    align-items: center;
+    padding-top: 3rem;
 }
 
 #umubonjyo .card{
-    width: 50%;
-    aspect-ratio: 0.7/1;
+    width: 45%;
+    /* max-width: 210px; */
+    aspect-ratio: 2/3;
     background-size: cover;
     border-radius: 1rem;
-    border: 3px inset #6A994Eaa;
-    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
-    /* margin: 50px; */
+    border: .3rem ridge var(--tertiaryColor);
+    /* box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25); */
+    position: relative;
 }
 
 #umubonjyo .card.one{
     background-image: url('Images/KCC.jpeg');
-    /* transform: rotate(2deg); */
+    transform: rotate(2deg);
+}
+
+#umubonjyo .card.one .style{
+    top: 100%;
+    left: 100%;
 }
 
 #umubonjyo .card.two{
     background-image: url('Images/Gorilla Hero.jpg');
-    /* transform: rotate(-8deg) translate(-10%,-30%); */
+    transform: rotate(-8deg) translate(-10%,-30%);
+}
+
+#umubonjyo .card.two .style{
+    
 }
 
 #umubonjyo .style{
     width: 5rem;
-    visibility: hidden;
 }
