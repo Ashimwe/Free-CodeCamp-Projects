@@ -9,9 +9,9 @@
 :root{
     --primaryColor: #F2E8C7;
     --secondaryColor: #386641;
-    --tertiaryColor: #A7C957;
+    --hoverColor: #8eaa4d;
     --secondaryColor2: #6A994E;
-    --tertiaryColor2: #000000;
+    --tertiaryColor: #000000;
     --titleFont: "Archivo", sans-serif;
     --bodyFont: "Space Mono", monospace;
     overflow-x: hidden;
@@ -47,6 +47,7 @@ nav{
     right: 5rem;
     flex-wrap: wrap;
     gap: 2rem;
+    z-index: 999;
 }
 
 #header{
@@ -99,7 +100,7 @@ nav{
     height: 100%;
     top: 0;
     left: -100%;
-    background-color: var(--secondaryColor);
+    background-color: var(--secondaryColor2);
     transition: left .5s ease-in-out;
     border-radius: 2rem;
     z-index: -1;
@@ -156,7 +157,7 @@ nav{
     top: -2.5rem;
     border-radius: 1.2rem 1.2rem 1rem 1rem;
     visibility: hidden;
-    border: 0.3px groove var(--tertiaryColor);
+    border: 0.3px groove var(--hoverColor);
 }
 
 #recents.dropdown{
@@ -217,14 +218,29 @@ nav{
     display: flex;
     gap: 10%;
     /* flex-wrap: wrap; */
-    min-height: 90vh;
-    /* border: solid; */
+    min-height: 80vh;
+    position: relative;
+
+}
+
+#hero::after{
+    content: '';
+    background-color: var(--hoverColor);
+    position: absolute;
+    width: 20%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px 0 rgba(0,0,0,0.25);
+    filter: blur(.3rem);
+    bottom: -20%;
+    right: 95%;
+    z-index: -999;
 }
 
 #heroText{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     flex-basis: 100%;
     /* align-self: start; */
     min-height: 100%;
@@ -304,6 +320,7 @@ h1{
     font-family: var(--titleFont);
     margin:  0;
     font-size: 1.6rem;
+    transition: background-color .5s ease-out;
 }
 
 #tourismCar{
@@ -327,6 +344,10 @@ h1{
     left: -3rem;
 }
 
+.groupTravels:hover{
+background-color: var(--hoverColor);
+}
+
 .groupTravels:hover #tourismCar{
     left: 12rem;
 }
@@ -340,47 +361,53 @@ h1{
     margin: 0;
 }
 
-#umubonjyo{
+#spoiler{
     display: flex;
     justify-content: end;
     max-height: 100%;
-    /* border: solid; */
     width: 100%;
     z-index: -1;
     align-items: center;
     padding-top: 3rem;
+    position: relative;
 }
 
-#umubonjyo .card{
-    width: 45%;
+#spoiler .card{
+    width: 35%;
     /* max-width: 210px; */
     aspect-ratio: 2/3;
     background-size: cover;
     border-radius: 1rem;
-    border: .3rem ridge var(--tertiaryColor);
+    border: .3rem ridge var(--hoverColor);
     /* box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25); */
     position: relative;
 }
 
-#umubonjyo .card.one{
+#spoiler .card.one{
     background-image: url('Images/KCC.jpeg');
     transform: rotate(2deg);
 }
 
-#umubonjyo .card.one .style{
-    top: 100%;
-    left: 100%;
+#spoiler .card.one .style{
+    top: 98%;
+    left: 95%;
+    width: 4rem;
 }
 
-#umubonjyo .card.two{
+#spoiler .card.two{
     background-image: url('Images/Gorilla Hero.jpg');
     transform: rotate(-8deg) translate(-10%,-30%);
 }
 
-#umubonjyo .card.two .style{
-    
+#spoiler .card.two .style{
+    bottom: 90%;
+    left: 95%;
+    width: 4rem;
 }
 
-#umubonjyo .style{
-    width: 5rem;
+#spoiler > .style{
+    width: 85%;
+    bottom: 60%;
+    right: 30%;
+    z-index: -99;
 }
