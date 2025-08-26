@@ -9,7 +9,7 @@
 :root{
     --primaryColor: #F2E8C7;
     --secondaryColor: #386641;
-    --hoverColor: #8eaa4d;
+    --hoverColor: #a7c957;
     --secondaryColor2: #6A994E;
     --tertiaryColor: #000000;
     --titleFont: "Archivo", sans-serif;
@@ -100,7 +100,7 @@ nav{
     height: 100%;
     top: 0;
     left: -100%;
-    background-color: var(--secondaryColor2);
+    background-color: var(--secondaryColor);
     transition: left .5s ease-in-out;
     border-radius: 2rem;
     z-index: -1;
@@ -275,7 +275,7 @@ h1{
 }
 
 .dashed{
-    background-color: var(--secondaryColor2);
+    background-color: var(--secondaryColor);
     color: var(--primaryColor);
     display: inline-block;
     padding: .2rem .5rem;
@@ -310,7 +310,7 @@ h1{
 .groupTravels{
     display: inline-flex;
     align-items: center;
-    background-color: var(--secondaryColor2);
+    background-color: var(--secondaryColor);
     color: var(--primaryColor);
     padding: 1rem 2rem;
     font-weight: bold;
@@ -345,7 +345,7 @@ h1{
 }
 
 .groupTravels:hover{
-background-color: var(--hoverColor);
+background-color: var(--secondaryColor2);
 }
 
 .groupTravels:hover #tourismCar{
