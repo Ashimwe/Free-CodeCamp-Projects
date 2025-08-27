@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    white-space: nowrap;
 }
 
 :root{
@@ -19,20 +18,15 @@
 }
 
 img{
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: cover;
 }
 
-/* .one{
-    grid-area: one;
-}
-
-.two{
-    grid-area: two;
-} */
-
 body{
     background-color: var(--primaryColor);
-    padding: 0px 5rem;
+    /* padding: 0px 5rem; */
     font-family: var(--bodyFont);
     position: relative;
 }
@@ -48,6 +42,12 @@ nav{
     flex-wrap: wrap;
     gap: 2rem;
     z-index: 999;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
 }
 
 #header{
@@ -214,13 +214,12 @@ nav{
 }
 
 #hero{
-    padding-top: 13rem;
+    padding: 13rem 5rem 0 5rem;
     display: flex;
     gap: 10%;
     /* flex-wrap: wrap; */
     min-height: 80vh;
     position: relative;
-
 }
 
 #hero::after{
@@ -410,4 +409,82 @@ background-color: var(--secondaryColor2);
     bottom: 60%;
     right: 30%;
     z-index: -99;
+}
+
+#topItineraries{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+#topItineraries .holder{
+    display: flex;
+    justify-content: end;
+}
+
+#topItineraries h2{
+    color: var(--secondaryColor);
+    text-transform: uppercase;
+    font-family: var(--titleFont);
+    border: dashed var(--secondaryColor2);
+    font-size: clamp(1rem, 1.8vw, 3rem);
+    padding: 1rem 3rem 1rem 5rem;
+    width: 30%;
+    transform: translateX(5%);
+    display: flex;
+    flex-direction: column;
+}
+
+#topItineraries h2::before{
+    content: '';
+    position: absolute;
+    border: dashed .19rem var(--secondaryColor2);
+    width: 1000%;
+    top: 50%;
+    right: 100%;
+}
+
+#topItineraries .one{
+    transform: translateY(10%);
+     width: fit-content;
+    display: inline-block;
+}
+
+#topItineraries .two{
+    color: var(--secondaryColor2);
+    transform: translateY(-10%);
+    padding-left: 15%;
+     width: fit-content;
+    display: inline-block;
+}
+
+.itinerary{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: .2rem;
+    flex-wrap: nowrap;
+}
+
+.itinerary > img{
+    width: 40%;
+    aspect-ratio: 95/32;
+    border-radius: 100px 0 0 100px;
+}
+
+.itinerary .text.text{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    border: solid;
+    flex-basis: 30%;
+    justify-self: flex-start;
+}
+
+.seeMore{
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+    padding: 1rem 2rem;
+    display: inline-block;
+    width: fit-content;
+    border-radius: 2rem;
 }
