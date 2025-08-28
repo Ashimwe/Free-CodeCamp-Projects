@@ -12,7 +12,7 @@
     --secondaryColor2: #6A994E;
     --tertiaryColor: #000000;
     --secTer: linear-gradient(
-        45deg,
+        90deg,
         #386641,
         #4E7A45,
         #5E8849,
@@ -295,6 +295,7 @@ h1{
     /* background: var(--secondaryColor); */
     /*Paccy*/
     color: var(--primaryColor);
+    background-size: 130%;
     display: inline-block;
     padding: .06em .15em;
 }
@@ -341,10 +342,20 @@ h1{
     margin:  0;
     font-size: 1.6rem;
     transition: background-position .5s ease-out;
+    animation: changeColor 2s infinite alternate;
 }
 
 .groupTravels:hover{
 background-position: right;
+}
+
+@keyframes changeColor{
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
+    }
 }
 
 #tourismCar{
