@@ -11,6 +11,14 @@
     --hoverColor: #a7c957;
     --secondaryColor2: #6A994E;
     --tertiaryColor: #000000;
+    --secTer: linear-gradient(
+        45deg,
+        #386641,
+        #4E7A45,
+        #5E8849,
+        #6C944B,
+        #80A74F,
+        #A7C957);
     --titleFont: "Archivo", sans-serif;
     --bodyFont: "Space Mono", monospace;
     overflow-x: hidden;
@@ -278,12 +286,14 @@ h1{
 .stroked{
     display: inline-block;
     color: transparent;
-    -webkit-text-stroke: .05em var(--secondaryColor2);
+    -webkit-text-stroke: .04em var(--secondaryColor2);
     position: relative;
 }
 
 .dashed{
-    background-color: var(--secondaryColor);
+    background: var(--secTer);
+    /* background: var(--secondaryColor); */
+    /*Paccy*/
     color: var(--primaryColor);
     display: inline-block;
     padding: .06em .15em;
@@ -318,7 +328,9 @@ h1{
 .groupTravels{
     display: flex;
     align-items: center;
-    background-color: var(--secondaryColor);
+    background: var(--secTer);
+    background-size: 150%;
+    background-position: left;
     color: var(--primaryColor);
     padding: .625em 1.25em;
     font-weight: bold;
@@ -328,7 +340,11 @@ h1{
     font-family: var(--titleFont);
     margin:  0;
     font-size: 1.6rem;
-    transition: background-color .5s ease-out;
+    transition: background-position .5s ease-out;
+}
+
+.groupTravels:hover{
+background-position: right;
 }
 
 #tourismCar{
@@ -349,10 +365,6 @@ h1{
 .groupTravels:hover p{
     /* flex-direction: row-reverse; */
     left: -2em;
-}
-
-.groupTravels:hover{
-background-color: var(--secondaryColor2);
 }
 
 .groupTravels:hover #tourismCar{
