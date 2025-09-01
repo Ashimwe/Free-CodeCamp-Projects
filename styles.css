@@ -295,7 +295,7 @@ h1{
     /* background: var(--secondaryColor); */
     /*Paccy*/
     color: var(--primaryColor);
-    background-size: 130%;
+    background-size: 120%;
     display: inline-block;
     padding: .06em .15em;
 }
@@ -453,10 +453,11 @@ background-position: right;
 #topItineraries{
     display: flex;
     flex-direction: column;
-    gap: .3em;
+    gap: 3em;
 }
 
 #topItineraries .holder{
+    width: 100%;
     display: flex;
     justify-content: end;
 }
@@ -464,68 +465,160 @@ background-position: right;
 #topItineraries h2{
     color: var(--secondaryColor);
     text-transform: uppercase;
-    font-family: var(--titleFont);
     border: dashed var(--secondaryColor2);
-    font-size: clamp(.8em, 1.8vw, 3em);
-    padding: 1em;
-    width: 30%;
-    transform: translateX(5%);
+    border-right: none;
+    font-size: clamp(.8em, 1.8vw, 2em);
+    padding: .4em 4em .4em 2em;
+    /* transform: translateX(-49%); */
+    position: relative;
+    width: fit-content;
+}
+
+.stackedText{
     display: flex;
     flex-direction: column;
+    font-family: var(--titleFont);
 }
 
 #topItineraries h2::before{
     content: '';
     position: absolute;
     border: dashed .19rem var(--secondaryColor2);
-    width: 1000%;
+    width: 500%;
     top: 50%;
     right: 100%;
 }
 
-#topItineraries .one{
-    transform: translateY(10%);
+#topItineraries h2 .one{
+    color: var(--secondaryColor);
      width: fit-content;
-    display: inline-block;
 }
 
-#topItineraries .two{
+#topItineraries h2 .two{
     color: var(--secondaryColor2);
-    transform: translateY(-10%);
-    padding-left: 15%;
      width: fit-content;
-    display: inline-block;
+     transform: translateX(20%);
 }
 
 .itinerary{
     display: flex;
     flex-direction: row-reverse;
-    gap: .2em;
-    flex-wrap: nowrap;
+    align-items: start;
+    justify-content: end;
+    gap: 5%;
+    padding-left: 5%;
+}
+
+.itinerary:nth-child(even){
+    flex-direction: row;
+    padding-left: 0;
+    padding-right: 5%;
 }
 
 .itinerary > img{
-    width: 40%;
+    display: inline-block;
+    width: clamp(20em,40%,50em);
     aspect-ratio: 95/32;
-    border-radius: 10em 0 0 10em;
+    align-self: stretch;
+    border-radius: 0 40em 40em 0;
 }
 
-.itinerary .text.text{
+.itinerary:nth-child(3) > img,
+.itinerary:nth-child(5) > img{
+    border-radius: 40em 0 0 40em;
+}
+
+.itinerary .text{
     display: flex;
     flex-direction: column;
-    gap: .2em;
-    border: solid;
-    flex-basis: 30%;
-    justify-self: flex-start;
+    gap: .5em;
+    /* border: solid; */
 }
 
-.seeMore{
-    background-color: var(--secondaryColor);
-    color: var(--primaryColor);
-    padding: 1em 2em;
-    display: inline-block;
+.itinerary .text h3.stackedText{
+    font-size: clamp(1.3em, 2vw, 1.8em);
+    align-self: center;
+}
+
+.itinerary .text .one{
+    color: var(--secondaryColor2);
+    padding-right: 5ch;
+    position: relative;
     width: fit-content;
+}
+
+.itinerary .text .two{
+    color: var(--secondaryColor) !important;
+    padding-left: 5ch;
+    white-space: nowrap;
+    position: relative;
+}
+
+.itinerary .text .two::before,
+.itinerary .text .one::after{
+    content: '';
+    width: 5ch;
+    height: 50%;
+    display: inline-block;
+    background: var(--secTer);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.itinerary .text .one::after{
+    left: calc(100% - 4ch);
+}
+
+.itinerary .text .two::before{
+    right: calc(100% - 4ch);
+}
+
+.itinerary .text p{
+    font-weight: bold;
+    opacity: .7;
+    font-size: 2vmin;
+    max-height: 7em;
+    overflow: hidden;
+}
+
+.explore{
+    background: var(--secondaryColor);
+    color: var(--primaryColor);
+    padding: 1.2% 4%;
+    /* width: fit-content; */
     border-radius: 2em;
+    align-self: center;
+    font-size: 120%;
+    font-weight: bold;
+    min-width: 9em;
+    text-align: center;
+    position: relative;
+    transition: padding-right .5s ease-in-out, background-color .5s ease-in-out;
+    overflow: hidden;
+}
+
+.explore::after{
+    content: '';
+    display: inline-block;
+    aspect-ratio: 1/1;
+    background: url('Icons/Double Right.svg') no-repeat center/cover;
+    width: 1em;
+    position: absolute;
+    top: 50%;
+    max-height: .8em;
+    transform: translateY(-45%);
+    right: -100%;
+    transition: right .5s ease-in-out;
+}
+
+.explore:hover::after{
+    right: 15%;
+}
+
+.explore:hover{
+    padding-right: 5%;
+    background-color: var(--secondaryColor2);
 }
 
 @media(max-width: 500px){
