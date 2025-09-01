@@ -28,7 +28,6 @@
 img{
     display: inline-block;
     max-width: 100%;
-    max-height: 100%;
     object-fit: cover;
 }
 
@@ -71,7 +70,7 @@ nav{
     line-height: 100%;
 }
 
-#logo{
+#header img{
     width: 5em;
     aspect-ratio: 5/2;
 }
@@ -295,7 +294,7 @@ h1{
     /* background: var(--secondaryColor); */
     /*Paccy*/
     color: var(--primaryColor);
-    background-size: 130%;
+    background-size: 120%;
     display: inline-block;
     padding: .06em .15em;
 }
@@ -326,7 +325,7 @@ h1{
     white-space: nowrap;
 }
 
-.groupTravels{
+.button1{
     display: flex;
     align-items: center;
     background: var(--secTer);
@@ -339,13 +338,15 @@ h1{
     position: relative;
     gap: .5em;
     font-family: var(--titleFont);
-    margin:  0;
+}
+
+#hero .button1{
     font-size: 1.6rem;
     transition: background-position .5s ease-out;
     animation: changeColor 2s infinite alternate;
 }
 
-.groupTravels:hover{
+#hero .button1:hover{
 background-position: right;
 }
 
@@ -361,24 +362,27 @@ background-position: right;
 #tourismCar{
     width: 1.2em;
     display: inline-block;
+}
+
+.button1 img{
     position: relative;
     left: 0;
     transform: translateY(-10%);
     transition: left .5s ease-out;
 }
 
-.groupTravels p{
+.button1 p{
     position: relative;
     left: 0;
     transition: left .5s ease-out;
 }
 
-.groupTravels:hover p{
+.button1:hover p{
     /* flex-direction: row-reverse; */
     left: -2em;
 }
 
-.groupTravels:hover #tourismCar{
+.button1:hover img{
     left: 7em;
 }
 
@@ -453,79 +457,312 @@ background-position: right;
 #topItineraries{
     display: flex;
     flex-direction: column;
-    gap: .3em;
+    gap: 3em;
 }
 
 #topItineraries .holder{
+    width: 100%;
     display: flex;
     justify-content: end;
 }
 
-#topItineraries h2{
+.header{
     color: var(--secondaryColor);
     text-transform: uppercase;
+    font-size: clamp(.8em, 1.8vw, 2em);
     font-family: var(--titleFont);
+}
+
+#topItineraries h2{
     border: dashed var(--secondaryColor2);
-    font-size: clamp(.8em, 1.8vw, 3em);
-    padding: 1em;
-    width: 30%;
-    transform: translateX(5%);
+    border-right: none;
+    padding: .4em 4em .4em 2em;
+    position: relative;
+    width: fit-content;
+}
+
+.stackedText{
     display: flex;
     flex-direction: column;
+    font-family: var(--titleFont);
 }
 
 #topItineraries h2::before{
     content: '';
     position: absolute;
     border: dashed .19rem var(--secondaryColor2);
-    width: 1000%;
+    width: 500%;
     top: 50%;
     right: 100%;
 }
 
-#topItineraries .one{
-    transform: translateY(10%);
+#topItineraries h2 .one{
+    color: var(--secondaryColor);
      width: fit-content;
-    display: inline-block;
 }
 
-#topItineraries .two{
+#topItineraries h2 .two{
     color: var(--secondaryColor2);
-    transform: translateY(-10%);
-    padding-left: 15%;
      width: fit-content;
-    display: inline-block;
+     transform: translateX(20%);
+}
+
+.itineraries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(60em, 100%), 1fr));
+    gap: 5em 3em;
+    justify-content: space-between;
 }
 
 .itinerary{
     display: flex;
     flex-direction: row-reverse;
-    gap: .2em;
-    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: end;
+    gap: 5%;
+    padding-left: 5%;
+}
+
+.itinerary:nth-child(odd){
+    flex-direction: row;
+    padding-left: 0;
+    padding-right: 5%;
 }
 
 .itinerary > img{
-    width: 40%;
+    display: inline-block;
+    width: clamp(20em,50%,50em);
     aspect-ratio: 95/32;
-    border-radius: 10em 0 0 10em;
+    align-self: stretch;
+    border-radius: 0 40em 40em 0;
 }
 
-.itinerary .text.text{
+.itinerary:nth-child(even) > img{
+    border-radius: 40em 0 0 40em;
+}
+
+.itinerary .text{
     display: flex;
     flex-direction: column;
-    gap: .2em;
-    border: solid;
-    flex-basis: 30%;
-    justify-self: flex-start;
+    gap: .7em;
+    /* border: solid; */
 }
 
-.seeMore{
+.itinerary .text h3.stackedText{
+    font-size: clamp(1.3em, 2vw, 1.8em);
+    align-self: center;
+}
+
+.itinerary .text .one{
+    color: var(--secondaryColor2);
+    padding-right: 5ch;
+    position: relative;
+    width: fit-content;
+}
+
+.itinerary .text .two{
+    color: var(--secondaryColor) !important;
+    padding-left: 5ch;
+    white-space: nowrap;
+    position: relative;
+    transform: translateY(-10%);
+}
+
+.itinerary .text .two::before,
+.itinerary .text .one::after{
+    content: '';
+    width: 5ch;
+    height: 50%;
+    display: inline-block;
+    background: var(--secTer);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.itinerary .text .one::after{
+    left: calc(100% - 4ch);
+}
+
+.itinerary .text .two::before{
+    right: calc(100% - 4ch);
+}
+
+.itinerary .text p{
+    font-weight: bold;
+    font-size: 120%;
+    opacity: .8;
+    max-height: 7em;
+    overflow: hidden;
+}
+
+.explore{
+    background: var(--secondaryColor);
+    color: var(--primaryColor);
+    padding: .5em 1em;
+    /* width: fit-content; */
+    border-radius: 2em;
+    align-self: center;
+    font-size: 120%;
+    font-weight: bold;
+    min-width: 9em;
+    text-align: center;
+    position: relative;
+    transition: padding-right .5s ease-in-out, background-color .5s ease-in-out;
+    overflow: hidden;
+}
+
+.explore::after{
+    content: '';
+    display: inline-block;
+    aspect-ratio: 1/1;
+    background: url('Icons/Double Right.svg') no-repeat center/cover;
+    width: 1em;
+    position: absolute;
+    top: 50%;
+    max-height: .8em;
+    transform: translateY(-35%);
+    right: -100%;
+    transition: right .5s ease-in-out;
+}
+
+.explore:hover::after{
+    right: 15%;
+}
+
+.explore:hover{
+    padding-right: 1.5em;
+    background-color: var(--secondaryColor2);
+}
+
+#packages .holder{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5em 5%;
+}
+
+#packages .header{
+    position: relative;
+}
+
+#packages .header::before{
+    position: absolute;
+    content: '';
+    width: 200%;
+    top: 100%;
+    border-bottom: 5px solid var(--secondaryColor2);
+    right: 50%;
+    border-radius: 10em;
+}
+
+.toggler{
+    background-color: var(--primaryColor);
+    box-shadow: 1px 1px rgba(0,0,0,0.25), -.5px -.5px rgba(0, 0, 0, 0.25);
+    border-radius: 10em;
+}
+
+.toggler a{
+    display: inline-block;
+    padding: .5em 1em;
+    font-size: 130%;
+    border-radius: 10em;
+    color: var(--secondaryColor);
+    font-weight: bold;
+    font-family: var(--titleFont);
+}
+
+.toggler a:first-child{
     background-color: var(--secondaryColor);
     color: var(--primaryColor);
-    padding: 1em 2em;
-    display: inline-block;
-    width: fit-content;
+}
+
+#packages .card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondaryColor2);
+    color: var(--primaryColor);
+    width: 20%;
+    margin: 0 auto;
     border-radius: 2em;
+}
+
+#packages .card .top{
+    display: flex;
+    background-color: var(--secondaryColor);
+    gap: 1em;
+    border-radius: 2em;
+}
+
+#packages .card .top .top{
+    padding-top: 3%;
+    gap: 20%;
+}
+
+#packages .card > .top{
+    flex-direction: column;
+    padding-bottom: 2%;
+}
+
+#packages .card .top img{
+    width: 3em;
+    aspect-ratio: 5/8;
+    justify-self: center;
+    display: inline-block;
+}
+
+#packages .card .top p{
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
+    align-self: center;
+    width: fit-content;
+    padding: .5em 1em;
+    font-weight: bold;
+    font-size: 50%;
+    border-radius: .5em;
+    position: relative;
+    left: -2%;
+    box-shadow: -.05em -.05em rgba(0,0,0,0.1);
+}
+
+#packages .card .top p::before{
+    content: '';
+    position: absolute;
+    width: 2em;
+    height: 3em;
+    background-color: black;
+    top: 40%;
+    left: 7%;
+    filter: blur(.5px);
+    transform: rotate(-45deg);
+    z-index: -1;
+    opacity: .5;
+}
+
+#packages .card .top h3{
+    font-size: 120%;
+    width: fit-content;
+    align-self: center;
+    font-family: var(--titleFont);
+}
+
+#packages .card .bottom{
+    padding: 2em;
+}
+
+#packages .card .buttons{
+    width: 100%;
+    font-size: 1.2em;
+}
+
+#packages .card .buttons .button1{
+    background: var(--primaryColor);
+    color: var(--secondaryColor)
+}
+
+#packages .card .buttons .button1 img{
+    width: 1em;
+    transform: translateY(5%);
 }
 
 @media(max-width: 500px){
