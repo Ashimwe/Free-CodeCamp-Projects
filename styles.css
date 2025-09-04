@@ -511,16 +511,23 @@ background-position: right;
      transform: translateX(20%);
 }
 
+.itineraries{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(60em, 100%), 1fr));
+    gap: 5em 3em;
+    justify-content: space-between;
+}
+
 .itinerary{
     display: flex;
     flex-direction: row-reverse;
-    align-items: start;
+    align-items: center;
     justify-content: end;
     gap: 5%;
     padding-left: 5%;
 }
 
-.itinerary:nth-child(even){
+.itinerary:nth-child(odd){
     flex-direction: row;
     padding-left: 0;
     padding-right: 5%;
@@ -528,21 +535,20 @@ background-position: right;
 
 .itinerary > img{
     display: inline-block;
-    width: clamp(20em,40%,50em);
+    width: clamp(20em,50%,50em);
     aspect-ratio: 95/32;
     align-self: stretch;
     border-radius: 0 40em 40em 0;
 }
 
-.itinerary:nth-child(3) > img,
-.itinerary:nth-child(5) > img{
+.itinerary:nth-child(even) > img{
     border-radius: 40em 0 0 40em;
 }
 
 .itinerary .text{
     display: flex;
     flex-direction: column;
-    gap: .5em;
+    gap: .7em;
     /* border: solid; */
 }
 
@@ -563,6 +569,7 @@ background-position: right;
     padding-left: 5ch;
     white-space: nowrap;
     position: relative;
+    transform: translateY(-10%);
 }
 
 .itinerary .text .two::before,
@@ -587,8 +594,8 @@ background-position: right;
 
 .itinerary .text p{
     font-weight: bold;
-    opacity: .7;
-    font-size: 2vmin;
+    font-size: 120%;
+    opacity: .8;
     max-height: 7em;
     overflow: hidden;
 }
@@ -596,7 +603,7 @@ background-position: right;
 .explore{
     background: var(--secondaryColor);
     color: var(--primaryColor);
-    padding: 1.2% 4%;
+    padding: .5em 1em;
     /* width: fit-content; */
     border-radius: 2em;
     align-self: center;
@@ -618,7 +625,7 @@ background-position: right;
     position: absolute;
     top: 50%;
     max-height: .8em;
-    transform: translateY(-45%);
+    transform: translateY(-35%);
     right: -100%;
     transition: right .5s ease-in-out;
 }
@@ -628,7 +635,7 @@ background-position: right;
 }
 
 .explore:hover{
-    padding-right: 5%;
+    padding-right: 1.5em;
     background-color: var(--secondaryColor2);
 }
 
