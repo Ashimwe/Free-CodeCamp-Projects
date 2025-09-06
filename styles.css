@@ -323,9 +323,9 @@ h1{
 }
 
 .buttons{
-    display: inline-flex;
-    align-items: center;
+    display: flex;
     gap: 1em;
+    align-items: center;
     white-space: nowrap;
 }
 
@@ -383,11 +383,11 @@ background-position: right;
 
 .button1:hover p{
     /* flex-direction: row-reverse; */
-    left: -2em;
+    left: -20%;
 }
 
 .button1:hover img{
-    left: 7em;
+    left: 85%;
 }
 
 .privateTours{
@@ -410,7 +410,7 @@ background-position: right;
     padding-top: 3%;
 }
 
-.cards{
+#hero .cards{
     width: clamp(40em,70%,50em);
     display: flex;
     align-items: start;
@@ -511,14 +511,14 @@ background-position: right;
      transform: translateX(20%);
 }
 
-.itineraries{
+#topItineraries .itineraries{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(60em, 100%), 1fr));
     gap: 5em 3em;
     justify-content: space-between;
 }
 
-.itinerary{
+#topItineraries .itinerary{
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -527,13 +527,13 @@ background-position: right;
     padding-left: 5%;
 }
 
-.itinerary:nth-child(odd){
+#topItineraries .itinerary:nth-child(odd){
     flex-direction: row;
     padding-left: 0;
     padding-right: 5%;
 }
 
-.itinerary > img{
+#topItineraries .itinerary > img{
     display: inline-block;
     width: clamp(20em,50%,50em);
     aspect-ratio: 95/32;
@@ -541,30 +541,30 @@ background-position: right;
     border-radius: 0 40em 40em 0;
 }
 
-.itinerary:nth-child(even) > img{
+#topItineraries .itinerary:nth-child(even) > img{
     border-radius: 40em 0 0 40em;
 }
 
-.itinerary .text{
+#topItineraries .itinerary .text{
     display: flex;
     flex-direction: column;
     gap: .7em;
     /* border: solid; */
 }
 
-.itinerary .text h3.stackedText{
+#topItineraries .itinerary .text h3.stackedText{
     font-size: clamp(1.3em, 2vw, 1.8em);
     align-self: center;
 }
 
-.itinerary .text .one{
+#topItineraries .itinerary .text .one{
     color: var(--secondaryColor2);
     padding-right: 5ch;
     position: relative;
     width: fit-content;
 }
 
-.itinerary .text .two{
+#topItineraries .itinerary .text .two{
     color: var(--secondaryColor) !important;
     padding-left: 5ch;
     white-space: nowrap;
@@ -600,7 +600,7 @@ background-position: right;
     overflow: hidden;
 }
 
-.explore{
+.button2{
     background: var(--secondaryColor);
     color: var(--primaryColor);
     padding: .5em 1em;
@@ -616,7 +616,7 @@ background-position: right;
     overflow: hidden;
 }
 
-.explore::after{
+.button2::after{
     content: '';
     display: inline-block;
     aspect-ratio: 1/1;
@@ -630,11 +630,11 @@ background-position: right;
     transition: right .5s ease-in-out;
 }
 
-.explore:hover::after{
+.button2:hover::after{
     right: 15%;
 }
 
-.explore:hover{
+.button2:hover{
     padding-right: 1.5em;
     background-color: var(--secondaryColor2);
 }
@@ -681,38 +681,59 @@ background-position: right;
     color: var(--primaryColor);
 }
 
+#packages .cards{
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+}
+
 #packages .card{
     display: flex;
     flex-direction: column;
     background-color: var(--secondaryColor2);
     color: var(--primaryColor);
-    width: 20%;
-    margin: 0 auto;
-    border-radius: 2em;
+    width: fit-content;
+    border-radius: 1em;
+    padding-bottom: 3em;
+    position: relative;
+}
+
+#packages .card::after{
+    content: '';
+    display: inline-block;
+    width: 50%;
+    background-color: var(--primaryColor);
+    height: 1em;
+    border-radius: 10em;
+    position: absolute;
+    bottom: -5px;
+    box-shadow: .15em .15em rgba(0, 0, 0, 0.25);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #packages .card .top{
     display: flex;
     background-color: var(--secondaryColor);
-    gap: 1em;
-    border-radius: 2em;
+    gap: .7em;
+    border-radius: 1em;
 }
 
 #packages .card .top .top{
     padding-top: 3%;
-    gap: 20%;
+    gap: 0em;
 }
 
 #packages .card > .top{
     flex-direction: column;
-    padding-bottom: 2%;
+    padding-bottom: 5%;
 }
 
 #packages .card .top img{
-    width: 3em;
+    width: 4em;
     aspect-ratio: 5/8;
-    justify-self: center;
     display: inline-block;
+    object-fit: contain;
 }
 
 #packages .card .top p{
@@ -722,10 +743,9 @@ background-position: right;
     width: fit-content;
     padding: .5em 1em;
     font-weight: bold;
-    font-size: 50%;
     border-radius: .5em;
     position: relative;
-    left: -2%;
+    left: -3%;
     box-shadow: -.05em -.05em rgba(0,0,0,0.1);
 }
 
@@ -735,28 +755,45 @@ background-position: right;
     width: 2em;
     height: 3em;
     background-color: black;
-    top: 40%;
-    left: 7%;
-    filter: blur(.5px);
+    top: 45%;
+    left: 9%;
+    filter: blur(.7px);
     transform: rotate(-45deg);
     z-index: -1;
     opacity: .5;
 }
 
 #packages .card .top h3{
-    font-size: 120%;
+    font-size: 170%;
     width: fit-content;
     align-self: center;
     font-family: var(--titleFont);
+    letter-spacing: .05rem;
 }
 
 #packages .card .bottom{
-    padding: 2em;
+    padding: 1em 1.2em 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#packages .card .bottom .price{
+    font-size: 300%;
+    display: flex;
+    align-items: center;
+    gap: .2em;
+    letter-spacing: .05em;
+}
+
+#packages .card .bottom .price span{
+    opacity: .5;
+    font-size: 50%;
 }
 
 #packages .card .buttons{
     width: 100%;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 #packages .card .buttons .button1{
@@ -766,7 +803,47 @@ background-position: right;
 
 #packages .card .buttons .button1 img{
     width: 1em;
-    transform: translateY(5%);
+    transform: translateY(1%);
+}
+
+#packages .card .buttons .link{
+    color: var(--tertiaryColor);
+    opacity: .7;
+    line-height: 10%;
+    /* transition: opacity .5s ease-in-out, text .5s ease-in-out; */
+}
+
+#packages .card .buttons .link:hover{
+    text-decoration: underline;
+    opacity: .6;
+}
+
+#packages .card .bottom .itinearies{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+#packages .card .bottom .itinearies p{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: 1.3rem;
+    line-height: 100%;
+    /* opacity: .8; */
+}
+
+#packages .card .bottom .itinearies p::before{
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+    content: '\f058';
+    color: var(--hoverColor);
+    font-size: 1.2rem;
+    /* transform: translateY(5%); */
+    opacity: 1;
 }
 
 @media(max-width: 500px){
